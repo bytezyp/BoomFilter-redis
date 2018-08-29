@@ -5,6 +5,8 @@ A Bloom filter has two parameters : key (filer key), K (func number), option (re
 It has three functions, which are one of BoomFilter, anthor of DelKey, last of Count.
 
 In this implementation, redis-client used is [go-redis](github.com/go-redis/redis).
+
+Support data persistence
 # For example
 ### Initialization NewBoomFilter
 ````go
@@ -24,8 +26,6 @@ func main(){
     inputString := "testString"
    
 }
-
-	
 ````
 #### filter function
 ```go
@@ -41,7 +41,7 @@ func main(){
 #### DelKey function
 ```go
     var flag bool
-    flag = boom.DelKey()
+    flag = boom.DelKey(inputString)
 ```
 
 
